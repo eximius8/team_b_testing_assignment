@@ -4,3 +4,4 @@ flake8==3.9.2
 mypy==0.910
 pep257==0.7.0
 pre-commit==2.15.0
+Faker==8.12.1
