@@ -1,5 +1,7 @@
 # Тестирование moodle команда B.
 
+![pytest](https://github.com/eximius8/team_b_testing_assignment/actions/workflows/python-app.yml/badge.svg)
+
 Тестируемый сайт: [qacoursemoodle.innopolis.university](https://qacoursemoodle.innopolis.university/)
 
 ##  Настройка
