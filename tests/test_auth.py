@@ -14,7 +14,8 @@ class TestAuth:
         data = AuthData.random()
         app.login.auth(data)
         assert \
-            "Неверный логин или пароль, попробуйте заново." \
-            == app.login.find_element(
+            app.login.find_element(
                 (By.ID, "loginerrormessage")
-            ).text, "Тест на вход для случайных данных."
+            ).text in ['Invalid login, please try again',
+                       "Неверный логин или пароль, попробуйте заново."], \
+            "Тест на вход для случайных данных."
