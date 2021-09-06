@@ -19,3 +19,14 @@ class TestAuth:
             ).text in ['Invalid login, please try again',
                        "Неверный логин или пароль, попробуйте заново."], \
             "Тест на вход для случайных данных."
+
+    def test_auth_valid(self, app):
+        """Тестирование входа с верными данными."""
+
+        app.open_auth_page()
+        data = AuthData(username='eximius', password='!123456789Ab')
+        app.login.auth(data)
+        assert \
+            app.login.find_element(
+                (By.ID, "instance-189-header")
+            ).text == 'Недавно посещенные курсы'
