@@ -9,6 +9,8 @@ from pages.application import Application
 
 @pytest.fixture(scope="session")
 def app():
+    '''Фикстура для открытия браузера.'''
+
     base_url = 'https://qacoursemoodle.innopolis.university/login/index.php'
     headless_type = True
 
@@ -26,4 +28,5 @@ def app():
             webdriver.Chrome(ChromeDriverManager().install()), base_url)
 
     yield fixture
+    # Чистим после себя
     fixture.quit()
