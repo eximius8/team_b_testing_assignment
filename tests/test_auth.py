@@ -1,6 +1,5 @@
 """Тесты входа в систему находятся здесь."""
-from selenium.webdriver.common.by import By
-
+from locators.auth_locators import AuthLocators
 from models.auth import AuthData
 
 
@@ -15,7 +14,7 @@ class TestAuth:
         app.login.auth(data)
         assert \
             app.login.find_element(
-                (By.ID, "loginerrormessage")
+                AuthLocators.LOGIN_ERROR_MESSAGE
             ).text in ['Invalid login, please try again',
                        "Неверный логин или пароль, попробуйте заново."], \
             "Тест на вход для случайных данных."
@@ -28,5 +27,5 @@ class TestAuth:
         app.login.auth(data)
         assert \
             app.login.find_element(
-                (By.ID, "instance-189-header")
+                AuthLocators.RECENT_COURSES
             ).text == 'Недавно посещенные курсы'

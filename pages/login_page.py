@@ -1,6 +1,5 @@
 """Страница входа в приложение moodle."""
-from selenium.webdriver.common.by import By
-
+from locators.auth_locators import AuthLocators
 from pages.base_page import BasePage
 
 
@@ -12,6 +11,6 @@ class LoginPage(BasePage):
 
         login = data.username
         password = data.password
-        self.fill_element(self.find_element((By.ID, "username")), login)
-        self.fill_element(self.find_element((By.ID, "password")), password)
-        self.click_element(self.find_element((By.ID, "loginbtn")))
+        self.fill_element(self.find_element(AuthLocators.USERNAME), login)
+        self.fill_element(self.find_element(AuthLocators.PASSWORD), password)
+        self.click_element(self.find_element(AuthLocators.LOGIN_BTN))
