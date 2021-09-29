@@ -27,3 +27,10 @@ pip install -r requirements.txt
 ```
 pre-commit install
 ```
+
+### Запуск тестов
+
+```
+pytest --headless=false --base-url=https://qacoursemoodle.innopolis.university
+```
+Параметры `--headless` - (по умолчанию true) запуск тестов в режиме без демонстрации браузера `--base-url` - адрес сайта для тестирования (по умолчанию https://qacoursemoodle.innopolis.university)
