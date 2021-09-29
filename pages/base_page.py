@@ -20,6 +20,9 @@ class BasePage:
     def find_elements(self, locator):
         return self.app.driver.find_elements(*locator)
 
+    def select_value(self, select_element, value):
+        select_element.select_by_value(value)
+
     @staticmethod
     def set_value_select(element, value):
         return Select(element).select_by_visible_text(value)
