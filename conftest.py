@@ -26,7 +26,6 @@ def app(request):
     else:
         fixture = Application(
             webdriver.Chrome(ChromeDriverManager().install()), base_url)
-
     yield fixture
     # Чистим после себя
     fixture.quit()

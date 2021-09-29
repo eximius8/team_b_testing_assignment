@@ -2,7 +2,7 @@
 
 ![pytest](https://github.com/eximius8/team_b_testing_assignment/actions/workflows/python-app.yml/badge.svg)
 
-Данный репозиторий содержит набор автотестов для тестирования системы [moodle](https://moodle.org/). В частности тестируется сайт: [qacoursemoodle.innopolis.university](https://qacoursemoodle.innopolis.university/), используемый [Университетом Иннополоис](https://innopolis.university/).
+Данный репозиторий содержит набор автотестов для тестирования системы [moodle](https://moodle.org/). В частности тестируется сайт: [qacoursemoodle.innopolis.university](https://qacoursemoodle.innopolis.university/), используемый [Университетом Иннополис](https://innopolis.university/).
 
 ##  Настройка
 

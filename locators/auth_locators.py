@@ -9,3 +9,7 @@ class AuthLocators:
     USERNAME = (By.ID, "username")
     PASSWORD = (By.ID, "password")
     LOGIN_BTN = (By.ID, "loginbtn")
+    USER_BUTTON = (By.CLASS_NAME, "userbutton")
+    USER_MENU = (By.CLASS_NAME, "usermenu")
+    EXIT = (By.ID, "actionmenuaction-6")
+    CONFIRM_EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
