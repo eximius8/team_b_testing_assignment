@@ -2,7 +2,7 @@
 
 ![pytest](https://github.com/eximius8/team_b_testing_assignment/actions/workflows/python-app.yml/badge.svg)
 
-Тестируемый сайт: [qacoursemoodle.innopolis.university](https://qacoursemoodle.innopolis.university/)
+Данный репозиторий содержит набор автотестов для тестирования системы [moodle](https://moodle.org/). В частности тестируется сайт: [qacoursemoodle.innopolis.university](https://qacoursemoodle.innopolis.university/), используемый [Университетом Иннополоис](https://innopolis.university/).
 
 ##  Настройка
 
@@ -33,4 +33,4 @@ pre-commit install
 ```
 pytest --headless=false --base-url=https://qacoursemoodle.innopolis.university
 ```
-Параметры `--headless` - (по умолчанию true) запуск тестов в режиме без демонстрации браузера `--base-url` - адрес сайта для тестирования (по умолчанию https://qacoursemoodle.innopolis.university)
+Параметры `--headless` - (по умолчанию true) запуск тестов в режиме без демонстрации браузера `--base-url` - адрес сайта для тестирования (по умолчанию https://qacoursemoodle.innopolis.university), `--username`, `--password` - имя пользователя и пароль для входа в личный кабинет.

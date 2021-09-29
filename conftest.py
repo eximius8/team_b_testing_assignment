@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+from models.auth import AuthData
 from pages.application import Application
 
 
@@ -29,6 +30,18 @@ def app(request):
     yield fixture
     # Чистим после себя
     fixture.quit()
+
+
+@pytest.fixture
+def auth(app, request):
+    username = request.config.getoption("--username")
+    password = request.config.getoption("--password")
+    app.open_auth_page()
+    auth_data = AuthData(login=username, password=password)
+    app.login.auth(auth_data)
+    assert app.login.is_auth(), "Вход не выполнен"
+    yield
+    app.login.sign_out()
 
 
 def pytest_addoption(parser):
