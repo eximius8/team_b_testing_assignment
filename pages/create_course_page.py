@@ -5,6 +5,7 @@ from pages.base_page import BasePage
 
 class CreateCoursePage(BasePage):
     """Page to create new course lives here."""
+
     def open_course_format_section(self):
         self.click_element(
             self.find_element(CreateCoursePageLocators.COURSE_FORMAT_DATA)
