@@ -50,6 +50,10 @@ class UserPage(BasePage):
         """Сохранить профиль."""
         return self.find_element(EditProfileLocators.SAVE_PROFILE_BTN)
 
+    def find_data_changed_alert(self):
+        """Сообщение что данные изменены"""
+        return self.find_element(EditProfileLocators.DATA_CHANGED_ALERT)
+
     def _input_name(self, firstname):
         self.fill_element(self.input_firstname(), firstname)
 
@@ -78,9 +82,5 @@ class UserPage(BasePage):
 
         self._input_name(data.name)
         self._input_lastname(data.last_name)
-        self._input_email(data.email)
         self._input_city(data.city)
-        self._select_country(data.country_code)
-        self._select_timezone(data.timezone)
-        self._input_about(data.about)
         self._save_profile_data()
