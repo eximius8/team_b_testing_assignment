@@ -36,7 +36,7 @@ def auth(app, request):
     username = request.config.getoption("--username")
     password = request.config.getoption("--password")
     app.open_auth_page()
-    auth_data = AuthData(login=username, password=password)
+    auth_data = AuthData(username=username, password=password)
     app.login.auth(auth_data)
     assert app.login.is_auth(), "Вход не выполнен"
     yield
