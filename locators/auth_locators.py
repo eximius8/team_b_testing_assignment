@@ -13,3 +13,4 @@ class AuthLocators:
     USER_MENU = (By.CLASS_NAME, "usermenu")
     EXIT = (By.ID, "actionmenuaction-6")
     CONFIRM_EXIT_BUTTON = (By.XPATH, "//button[text()='Выход']")
+    USER_MENU_SETTINGS = (By.ID, "actionmenuaction-5")

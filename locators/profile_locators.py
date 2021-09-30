@@ -11,3 +11,7 @@ class EditProfileLocators:
     CITY_INPUT = (By.ID, "id_city")
     COUNTRY_INPUT = (By.ID, "id_country")
     SAVE_PROFILE_BTN = (By.ID, "id_submitbutton")
+    EDIT_INFO = (By.CSS_SELECTOR, "a[href*='user/edit.php']")
+    BASIC_DATA = (By.ID, "id_moodle")
+    EMAIL_INPUT = (By.ID, "id_email")
+    MOODLE_NET_PROFILE = (By.ID, "id_moodlenetprofile")
