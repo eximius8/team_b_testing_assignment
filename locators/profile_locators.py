@@ -1,4 +1,4 @@
-'''Locators for edit profile page live here.'''
+"""Locators for edit profile page live here."""
 from selenium.webdriver.common.by import By
 
 
@@ -15,4 +15,7 @@ class EditProfileLocators:
     BASIC_DATA = (By.ID, "id_moodle")
     EMAIL_INPUT = (By.ID, "id_email")
     MOODLE_NET_PROFILE = (By.ID, "id_moodlenetprofile")
-    DATA_CHANGED_ALERT = (By.XPATH, "//div[@class='alert alert-success alert-block fade in ']")
+    DATA_CHANGED_ALERT = (
+        By.XPATH,
+        "//div[@class='alert alert-success alert-block fade in ']",
+    )

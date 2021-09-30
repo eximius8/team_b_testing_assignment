@@ -1,4 +1,6 @@
 """Pytest fixtures live here."""
+from typing import Any
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -10,7 +12,7 @@ from pages.application import Application
 
 @pytest.fixture(scope="session")
 def app(request):
-    '''Фикстура для открытия браузера.'''
+    """Фикстура для открытия браузера."""
 
     base_url = request.config.getoption("--base-url")
     headless_type = request.config.getoption("--headless").lower()
@@ -18,14 +20,13 @@ def app(request):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         fixture = Application(
-            webdriver.Chrome(
-                ChromeDriverManager().install(), options=chrome_options
-            ),
+            webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options),
             base_url,
         )
     else:
         fixture = Application(
-            webdriver.Chrome(ChromeDriverManager().install()), base_url)
+            webdriver.Chrome(ChromeDriverManager().install()), base_url
+        )
     yield fixture
     # Чистим после себя
     fixture.quit()
@@ -43,7 +44,7 @@ def auth(app, request):
     app.login.sign_out()
 
 
-def pytest_addoption(parser):
+def pytest_addoption(parser: Any) -> None:
     parser.addoption(
         "--headless",
         action="store",
@@ -58,8 +59,14 @@ def pytest_addoption(parser):
         help="url сайта для тестирования",
     ),
     parser.addoption(
-        "--username", action="store", default="eximius", help="имя пользователя",
+        "--username",
+        action="store",
+        default="eximius",
+        help="имя пользователя",
     ),
     parser.addoption(
-        "--password", action="store", default="!123456789Ab", help="пароль",
+        "--password",
+        action="store",
+        default="!123456789Ab",
+        help="пароль",
     ),

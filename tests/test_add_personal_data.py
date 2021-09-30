@@ -1,4 +1,4 @@
-'''Tests for adding user data live here.'''
+"""Tests for adding user data live here."""
 import pytest
 
 from models.personal_data import PersonalData
@@ -34,6 +34,4 @@ class TestAddPersonalData:
         personal_data = PersonalData.random()
         setattr(personal_data, param, "")
         app.user_page._edit_personal_data(personal_data)
-        assert (
-            not app.user_page.has_data_changed_alert()
-        ), "Данные были изменены!"
+        assert not app.user_page.has_data_changed_alert(), "Данные были изменены!"
